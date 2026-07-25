@@ -567,12 +567,18 @@
 
             </div>
 
-            <form action="thanks.html" method="POST">
+       <form id="contactForm" action="https://formspree.io/f/xpqvojlg" method="POST">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Email Address" required>
     <textarea name="message" placeholder="Message" required></textarea>
     <button type="submit" class="btn" name="btn">Send Message</button>
 </form>
+
+<div id="successMessage" style="display:none; text-align:center; padding:40px 20px;">
+    <i class="fas fa-check-circle" style="font-size:3rem; color:#0077b6; margin-bottom:15px;"></i>
+    <h3 style="color:#1d2d44; margin-bottom:10px;">Message Sent Successfully!</h3>
+    <p style="color:#6c757d;">Thank you for reaching out. I'll get back to you within 24 hours.</p>
+</div>
 
         </div>
 
