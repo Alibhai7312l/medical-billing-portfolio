@@ -627,3 +627,17 @@ footer p:last-child {
   opacity: 1;
   transform: translateY(0);
 }
+
+.stats {
+  display: flex;              /* ← abhi bhi purana wala hai */
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 60px;
+}
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 60px;
+}
