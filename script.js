@@ -41,3 +41,30 @@ const counterObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.5 });
 
 statNumbers.forEach(el => counterObserver.observe(el));
+
+// ===== Contact Form Submission =====
+const contactForm = document.getElementById('contactForm');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const formData = new FormData(contactForm);
+
+    fetch(contactForm.action, {
+      method: 'POST',
+      body: formData,
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+      if (response.ok) {
+        contactForm.style.display = 'none';
+        document.getElementById('successMessage').style.display = 'block';
+      } else {
+        alert('Something went wrong. Please try again or email me directly.');
+      }
+    })
+    .catch(() => {
+      alert('Something went wrong. Please try again or email me directly.');
+    });
+  });
+}
